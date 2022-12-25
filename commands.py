@@ -13,8 +13,6 @@ async def starting(message: types.Message):
     await bot.send_message(message.from_user.id, f'Привет, {message.from_user.first_name}! Давай сыграем в конфетки? '
                                                  f'Напиши /yes, если согласен')
 
-
-
 @dp.message_handler(commands='yes')
 async def confirm(message: types.Message):
     global total
@@ -27,7 +25,6 @@ async def confirm(message: types.Message):
         total -= bot_step
         await bot.send_message(message.from_user.id, f'Бот взял {bot_step} конфет, на столе осталось {total}. Твой ход!')
         return total
-
 @dp.message_handler()
 async def all_bot(message: types.Message):
     global total
