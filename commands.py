@@ -8,8 +8,11 @@ max_step = 28
 
 @dp.message_handler(commands='start')
 async def starting(message: types.Message):
+    global total
+    total = 150
     await bot.send_message(message.from_user.id, f'Привет, {message.from_user.first_name}! Давай сыграем в конфетки? '
                                                  f'Напиши /yes, если согласен')
+
 
 
 @dp.message_handler(commands='yes')
