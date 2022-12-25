@@ -22,7 +22,7 @@ async def confirm(message: types.Message):
         await bot.send_message(message.from_user.id, f'Пeрвым ходит бот')
         bot_step = random.randint(1, max_step)
         total -= bot_step
-        await bot.send_message(message.from_user.id, f'Бот взял {bot_step} конфет, на столе осталось {total}')
+        await bot.send_message(message.from_user.id, f'Бот взял {bot_step} конфет, на столе осталось {total}. Твой ход!')
         return total
 
 @dp.message_handler()
@@ -52,7 +52,7 @@ async def all_bot(message: types.Message):
                     await bot.send_message(message.from_user.id, f'Сорри, Бот победил')
                 else:
                     await bot.send_message(message.from_user.id,
-                                           f'Бот взял {bot_step} конфет, на столе осталось {total}')
+                                           f'Бот взял {bot_step} конфет, на столе осталось {total}. Твой ход!')
 
 
 
