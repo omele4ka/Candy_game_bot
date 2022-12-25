@@ -18,7 +18,8 @@ async def confirm(message: types.Message):
     global total
     if controller.whoes_first() == True:
         await bot.send_message(message.from_user.id, f'{message.from_user.first_name}, твой ход! '
-                                                     f'На столе 150 конфет. Можно взять от 1 до 28. Сколько ты возьмешь?')
+                                                     f'На столе 150 конфет. Можно взять от 1 до 28. Побеждает тот, кто заберет со стола последнюю конфету.'
+                                                     f' Сколько ты возьмешь?')
     else:
         await bot.send_message(message.from_user.id, f'Пeрвым ходит бот')
         bot_step = random.randint(1, max_step)
